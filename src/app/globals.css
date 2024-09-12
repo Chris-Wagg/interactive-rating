@@ -1,0 +1,188 @@
+/* css reset from https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+}
+/* Set core body defaults */
+body {
+	line-height: 1.5;
+	margin: 0;
+	min-height: 100vh;
+}
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	color: currentColor;
+	text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img,
+picture {
+	display: block;
+	max-width: 100%;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+textarea {
+	resize: none;
+}
+/* Scroll behaviours and animations */
+html {
+	scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion) {
+	html {
+		scroll-behavior: reduce;
+	}
+}
+
+:root {
+	--clr-white: hsl(0, 0%, 100%);
+	--clr-light-grey: hsl(217, 12%, 63%);
+	--clr-dark-blue: hsl(213, 19%, 18%);
+	--clr-very-dark-blue: hsl(216, 12%, 8%);
+	--clr-grey-blue: hsl(215, 18%, 18%);
+	--clr-orange: hsl(25, 97%, 53%);
+	--fs-p: 15px;
+}
+
+/* utility classes */
+
+html {
+	background-color: var(--clr-very-dark-blue);
+}
+
+p {
+	color: var(--clr-light-grey);
+}
+
+main {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h2 {
+	color: var(--clr-white);
+}
+
+.card-container {
+	background-color: var(--clr-dark-blue);
+	background-image: linear-gradient(
+		var(--clr-dark-blue),
+		var(--clr-very-dark-blue)
+	);
+	margin: 3rem;
+	border-radius: 25px;
+}
+
+/* card 1 classes */
+
+.card-1 {
+	display: grid;
+	padding: 2rem;
+}
+
+.star-icon {
+	/* border: 1px solid white; */
+	padding: 1rem;
+	border-radius: 99px;
+	background-color: var(--clr-dark-blue);
+}
+
+.title {
+	font-size: 2rem;
+}
+
+.card-1 > p {
+	max-width: 40ch;
+}
+
+.rating-button-container {
+	display: flex;
+	justify-content: space-around;
+	margin: 2rem 0;
+}
+
+.rating-button-container > button {
+	color: var(--clr-light-grey);
+	background-color: var(--clr-dark-blue);
+	border: 0;
+	border-radius: 999px;
+	height: 50px;
+	width: 50px;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rating-button-container > button:hover {
+	background-color: var(--clr-orange);
+	color: black;
+}
+
+.rating-button-container > button:focus {
+	background-color: white;
+	color: black;
+}
+
+.submit-btn {
+	justify-self: center;
+	width: 100%;
+	border-radius: 99px;
+	font-weight: 700;
+	padding: 1rem;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	background-color: var(--clr-orange);
+	border: 0;
+}
+
+.submit-btn:hover {
+	background-color: white;
+}
