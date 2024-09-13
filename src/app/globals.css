@@ -86,6 +86,7 @@ html {
 	--clr-grey-blue: hsl(215, 18%, 18%);
 	--clr-orange: hsl(25, 97%, 53%);
 	--fs-p: 15px;
+	--fs-lg: 2rem;
 }
 
 /* utility classes */
@@ -108,6 +109,7 @@ main {
 
 h2 {
 	color: var(--clr-white);
+	font-size: var(--fs-lg);
 }
 
 .card-container {
@@ -134,10 +136,6 @@ h2 {
 	background-color: var(--clr-dark-blue);
 }
 
-.title {
-	font-size: 2rem;
-}
-
 .card-1 > p {
 	max-width: 40ch;
 }
@@ -161,16 +159,6 @@ h2 {
 	justify-content: center;
 }
 
-.rating-button-container > button:hover {
-	background-color: var(--clr-orange);
-	color: black;
-}
-
-.rating-button-container > button:focus {
-	background-color: white;
-	color: black;
-}
-
 .submit-btn {
 	justify-self: center;
 	width: 100%;
@@ -183,6 +171,39 @@ h2 {
 	border: 0;
 }
 
+/* active and hover states */
+
+.rating-button-container > button:hover {
+	background-color: var(--clr-orange);
+	color: black;
+}
+
+.rating-button-container > button:focus {
+	background-color: white;
+	color: black;
+}
+
 .submit-btn:hover {
 	background-color: white;
+}
+
+/* card 2 */
+
+.card-2 {
+	display: grid;
+	justify-items: center;
+	padding: 2rem;
+	text-align: center;
+}
+
+.card-2 > p {
+	max-width: 30ch;
+}
+
+.card--rating-selected {
+	padding: 0.5rem 1rem;
+	background-color: var(--clr-dark-blue);
+	border-radius: 25px;
+	color: var(--clr-orange);
+	margin: 2rem 0 1rem 0;
 }
