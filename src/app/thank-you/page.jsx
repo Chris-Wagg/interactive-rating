@@ -1,14 +1,12 @@
 'use client'
-export default function Home(props) {
-	const { rating } = props.location.state
-
+export default function ThankYou() {
 	return (
 		<main>
 			<section className='card-container'>
 				<div className='card-2'>
 					<img src='illustration-thank-you.svg' alt='' role='none' />
 					<p className='card--rating-selected'>
-						you selected {rating} out of 5
+						you selected ***** out of 5
 					</p>
 					<h2>Thank you!</h2>
 					<p>
