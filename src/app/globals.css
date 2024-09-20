@@ -140,6 +140,11 @@ h2 {
 	max-width: 40ch;
 }
 
+.rating-form__btn-container {
+	display: flex;
+	justify-content: space-around;
+}
+
 .rating-button-container {
 	display: flex;
 	justify-content: space-around;
@@ -214,17 +219,13 @@ label {
 
 /* ----------------------- */
 
-/* #radios label {
+#radios label {
 	position: relative;
-} */
+}
 
-/* input[type='radio'] {
+input[type='radio'] {
 	position: absolute;
 	opacity: 0;
-} */
-
-.rating-form {
-	display: flex;
 }
 
 .rating-number {
@@ -244,4 +245,8 @@ input:checked + button {
 }
 input:checked + .rating-number {
 	background-color: green;
+}
+
+.error-message {
+	color: red;
 }
