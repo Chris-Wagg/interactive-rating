@@ -140,9 +140,8 @@ h2 {
 	max-width: 40ch;
 }
 
-.rating-form__btn-container {
-	display: flex;
-	justify-content: space-around;
+.rating-form {
+	text-align: center;
 }
 
 .rating-button-container {
@@ -151,7 +150,7 @@ h2 {
 	margin: 2rem 0;
 }
 
-.rating-button-container > button {
+.rating-number {
 	color: var(--clr-light-grey);
 	background-color: var(--clr-dark-blue);
 	border: 0;
@@ -178,12 +177,12 @@ h2 {
 
 /* active and hover states */
 
-.rating-button-container > button:hover {
+.rating-number:hover {
 	background-color: var(--clr-orange);
 	color: black;
 }
 
-.rating-button-container > button:focus {
+.rating-number:focus {
 	background-color: white;
 	color: black;
 }
@@ -229,7 +228,20 @@ input[type='radio'] {
 }
 
 .rating-number {
-	/* border: 0; */
+	color: var(--clr-light-grey);
+	background-color: var(--clr-dark-blue);
+	border: 0;
+	border-radius: 999px;
+	height: 50px;
+	width: 50px;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* .rating-number {
+	border: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -238,13 +250,11 @@ input[type='radio'] {
 	border-radius: 99px;
 	color: white;
 	background-color: blue;
-}
+} */
 
-input:checked + button {
-	background-color: green;
-}
 input:checked + .rating-number {
-	background-color: green;
+	background-color: var(--clr-white);
+	color: black;
 }
 
 .error-message {

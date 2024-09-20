@@ -90,7 +90,7 @@ export default function Home() {
 							</div>
 						)}
 
-						<div className='rating-form__btn-container'>
+						<div className='rating-button-container'>
 							<label htmlFor='rating-1'>
 								<input
 									type='radio'
