@@ -39,12 +39,6 @@ export default function Home() {
 		}
 	}, [errorBoolean])
 
-	// logs what number is selected
-	useEffect(() => {
-		console.log(selectedRating)
-		// validateRating()
-	}, [selectedRating])
-
 	// checks the rating number on submit and sets the corresponding error message and sets the error boolean
 
 	let cardTwo = document.getElementById('cardTwo')
