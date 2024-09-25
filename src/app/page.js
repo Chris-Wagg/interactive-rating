@@ -24,9 +24,6 @@ export default function Home() {
 		setSelectedRating(5)
 	}
 
-	let cardTwo = document.getElementById('cardTwo')
-	let cardOne = document.getElementById('cardOne')
-
 	useEffect(() => {
 		// checks to see if error message is present and then sets the error boolean
 		console.log(selectedRating)
@@ -49,6 +46,10 @@ export default function Home() {
 	}, [selectedRating])
 
 	// checks the rating number on submit and sets the corresponding error message and sets the error boolean
+
+	let cardTwo = document.getElementById('cardTwo')
+	let cardOne = document.getElementById('cardOne')
+
 	const validateRating = () => {
 		let errorMessage = {}
 		if (selectedRating === 0) {
