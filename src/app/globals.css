@@ -122,6 +122,14 @@ h2 {
 	border-radius: 25px;
 }
 
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
 /* card 1 classes */
 
 .card-1 {
@@ -212,6 +220,11 @@ h2 {
 	margin: 2rem 0 1rem 0;
 }
 
+.rating-selected--number {
+	color: white;
+	font-weight: 700;
+}
+
 label {
 	color: white;
 }
@@ -239,18 +252,6 @@ input[type='radio'] {
 	align-items: center;
 	justify-content: center;
 }
-
-/* .rating-number {
-	border: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 50px;
-	height: 50px;
-	border-radius: 99px;
-	color: white;
-	background-color: blue;
-} */
 
 input:checked + .rating-number {
 	background-color: var(--clr-white);

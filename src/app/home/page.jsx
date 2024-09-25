@@ -24,6 +24,9 @@ export default function Home() {
 		setSelectedRating(5)
 	}
 
+	let cardTwo = document.getElementById('cardTwo')
+	let cardOne = document.getElementById('cardOne')
+
 	useEffect(() => {
 		// checks to see if error message is present and then sets the error boolean
 		console.log(selectedRating)
@@ -57,6 +60,8 @@ export default function Home() {
 			errorMessage.text = ''
 			setErrorMessage(errorMessage)
 			setErrorBoolean(false)
+			cardOne.classList.add('hidden')
+			cardTwo.classList.add('show')
 		}
 	}
 
@@ -68,7 +73,7 @@ export default function Home() {
 
 	return (
 		<main>
-			<section className='card-container'>
+			<section className='card-container' id='cardOne'>
 				<div className='card-1'>
 					<img
 						src='icon-star.svg'
@@ -161,6 +166,25 @@ export default function Home() {
 							<button className='submit-btn'>SUBMIT</button>
 						</div>
 					</form>
+				</div>
+			</section>
+			<section className='card-container hidden' id='cardTwo'>
+				<div className='card-2'>
+					<img src='illustration-thank-you.svg' alt='' role='none' />
+					<p className='card--rating-selected'>
+						you selected
+						<span className='rating-selected--number'>
+							&nbsp;
+							{selectedRating}
+							&nbsp;
+						</span>
+						out of 5
+					</p>
+					<h2>Thank you!</h2>
+					<p>
+						{`We appreciate you taking the time to give a rating. If you
+						ever need more support, don’t hesitate to get in touch!`}
+					</p>
 				</div>
 			</section>
 		</main>
