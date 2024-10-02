@@ -24,16 +24,19 @@ export default function Home() {
 		setSelectedRating(5)
 	}
 
+	// handles the radio button changes to update the state for the selected rating
+	const handleChange = (e) => {
+		setSelectedRating(Number(e.target.value))
+	}
+
 	useEffect(() => {
 		// checks to see if error message is present and then sets the error boolean
-		console.log(selectedRating)
+
 		let errorMessage = document.getElementById('errorMessage')
 		if (errorMessage === null) {
-			console.log('error message = false')
 			setErrorBoolean(false)
 			return
 		} else {
-			console.log('error message = true')
 			setErrorBoolean(true)
 			errorMessage.focus()
 		}
@@ -49,21 +52,24 @@ export default function Home() {
 
 	const validateRating = () => {
 		let errorMessage = {}
-		if (selectedRating === 0) {
+		if (
+			selectedRating === 0 ||
+			selectedRating === null ||
+			selectedRating === undefined
+		) {
 			setErrorBoolean(true)
 			errorMessage.text = 'Please select a rating'
 			setErrorMessage(errorMessage)
 		} else if (selectedRating >= 1) {
-			console.log(`selected rating is`, selectedRating)
 			errorMessage.text = ''
 			setErrorMessage(errorMessage)
 			setErrorBoolean(false)
 			cardOne.classList.add('hidden')
 			cardTwo.classList.add('show')
+			cardTwo.focus()
 		}
 	}
 
-	//
 	const submitValidation = (e) => {
 		e.preventDefault()
 		validateRating()
@@ -100,6 +106,8 @@ export default function Home() {
 									name='rating'
 									id='rating-1'
 									value='1'
+									checked={selectedRating === 1}
+									onChange={handleChange}
 								/>
 								<div
 									className='rating-number'
@@ -113,6 +121,9 @@ export default function Home() {
 									name='rating'
 									id='rating-2'
 									value='2'
+									checked={selectedRating === 2}
+									onChange={handleChange}
+									on
 								/>
 								<div
 									className='rating-number'
@@ -126,6 +137,8 @@ export default function Home() {
 									name='rating'
 									id='rating-3'
 									value='3'
+									checked={selectedRating === 3}
+									onChange={handleChange}
 								/>
 								<div
 									className='rating-number'
@@ -139,6 +152,8 @@ export default function Home() {
 									name='rating'
 									id='rating-4'
 									value='4'
+									checked={selectedRating === 4}
+									onChange={handleChange}
 								/>
 								<div
 									className='rating-number'
@@ -152,6 +167,8 @@ export default function Home() {
 									name='rating'
 									id='rating-5'
 									value='5'
+									checked={selectedRating === 5}
+									onChange={handleChange}
 								/>
 								<div
 									className='rating-number'
