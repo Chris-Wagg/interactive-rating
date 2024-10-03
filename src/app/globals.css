@@ -92,7 +92,7 @@ html {
 /* utility classes */
 
 html {
-	/* background-color: var(--clr-very-dark-blue); */
+	background-color: var(--clr-very-dark-blue);
 }
 
 p {
@@ -145,7 +145,7 @@ h2 {
 }
 
 .card-1 > p {
-	max-width: 40ch;
+	max-width: 35ch;
 }
 
 .rating-form {
