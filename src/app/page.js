@@ -7,21 +7,9 @@ export default function Home() {
 	const [errorBoolean, setErrorBoolean] = useState(false)
 	const [errorMessage, setErrorMessage] = useState({})
 
-	// sets the value rating through state change
-	function setRatingOne() {
-		setSelectedRating(1)
-	}
-	function setRatingTwo() {
-		setSelectedRating(2)
-	}
-	function setRatingThree() {
-		setSelectedRating(3)
-	}
-	function setRatingFour() {
-		setSelectedRating(4)
-	}
-	function setRatingFive() {
-		setSelectedRating(5)
+	// sets the value rating for the state, takes the ratingValue from the radio input
+	function setRating(ratingValue) {
+		setSelectedRating(ratingValue)
 	}
 
 	// handles the radio button changes to update the state for the selected rating
@@ -31,7 +19,6 @@ export default function Home() {
 
 	useEffect(() => {
 		// checks to see if error message is present and then sets the error boolean
-
 		let errorMessage = document.getElementById('errorMessage')
 		if (errorMessage === null) {
 			setErrorBoolean(false)
@@ -42,14 +29,7 @@ export default function Home() {
 		}
 	}, [errorBoolean])
 
-	// logs what number is selected
-	useEffect(() => {
-		let cardTwo = document.getElementById('cardTwo')
-		let cardOne = document.getElementById('cardOne')
-	}, [])
-
 	// checks the rating number on submit and sets the corresponding error message and sets the error boolean
-
 	const validateRating = () => {
 		let errorMessage = {}
 		if (
@@ -111,7 +91,7 @@ export default function Home() {
 								/>
 								<div
 									className='rating-number'
-									onClick={setRatingOne}>
+									onClick={() => setRating(1)}>
 									1
 								</div>
 							</label>
@@ -127,7 +107,7 @@ export default function Home() {
 								/>
 								<div
 									className='rating-number'
-									onClick={setRatingTwo}>
+									onClick={() => setRating(2)}>
 									2
 								</div>
 							</label>
@@ -142,7 +122,7 @@ export default function Home() {
 								/>
 								<div
 									className='rating-number'
-									onClick={setRatingThree}>
+									onClick={() => setRating(3)}>
 									3
 								</div>
 							</label>
@@ -157,7 +137,7 @@ export default function Home() {
 								/>
 								<div
 									className='rating-number'
-									onClick={setRatingFour}>
+									onClick={() => setRating(4)}>
 									4
 								</div>
 							</label>
@@ -172,7 +152,7 @@ export default function Home() {
 								/>
 								<div
 									className='rating-number'
-									onClick={setRatingFive}>
+									onClick={() => setRating(5)}>
 									5
 								</div>
 							</label>
