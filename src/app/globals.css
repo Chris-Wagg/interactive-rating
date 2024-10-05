@@ -240,6 +240,11 @@ input[type='radio'] {
 	opacity: 0;
 }
 
+input:focus-visible + .rating-number {
+	background-color: var(--clr-white);
+	color: black;
+}
+
 .rating-number {
 	color: var(--clr-light-grey);
 	background-color: var(--clr-dark-blue);

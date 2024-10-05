@@ -1,3 +1,7 @@
+Front end mentor project page:
+
+Live site URL: https://chris-wagg.github.io/interactive-rating/
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

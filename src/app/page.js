@@ -1,33 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Home() {
 	const [selectedRating, setSelectedRating] = useState(0)
 	const [errorBoolean, setErrorBoolean] = useState(false)
 	const [errorMessage, setErrorMessage] = useState({})
 
-	// sets the value rating for the state, takes the ratingValue from the radio input
-	function setRating(ratingValue) {
-		setSelectedRating(ratingValue)
-	}
-
 	// handles the radio button changes to update the state for the selected rating
 	const handleChange = (e) => {
 		setSelectedRating(Number(e.target.value))
 	}
-
-	useEffect(() => {
-		// checks to see if error message is present and then sets the error boolean
-		let errorMessage = document.getElementById('errorMessage')
-		if (errorMessage === null) {
-			setErrorBoolean(false)
-			return
-		} else {
-			setErrorBoolean(true)
-			errorMessage.focus()
-		}
-	}, [errorBoolean])
 
 	// checks the rating number on submit and sets the corresponding error message and sets the error boolean
 	const validateRating = () => {
@@ -46,7 +29,6 @@ export default function Home() {
 			setErrorBoolean(false)
 			cardOne.classList.add('hidden')
 			cardTwo.classList.add('show')
-			cardTwo.focus()
 		}
 	}
 
@@ -89,11 +71,7 @@ export default function Home() {
 									checked={selectedRating === 1}
 									onChange={handleChange}
 								/>
-								<div
-									className='rating-number'
-									onClick={() => setRating(1)}>
-									1
-								</div>
+								<div className='rating-number'>1</div>
 							</label>
 							<label htmlFor='rating-2'>
 								<input
@@ -105,11 +83,7 @@ export default function Home() {
 									onChange={handleChange}
 									on
 								/>
-								<div
-									className='rating-number'
-									onClick={() => setRating(2)}>
-									2
-								</div>
+								<div className='rating-number'>2</div>
 							</label>
 							<label htmlFor='rating-3'>
 								<input
@@ -120,11 +94,7 @@ export default function Home() {
 									checked={selectedRating === 3}
 									onChange={handleChange}
 								/>
-								<div
-									className='rating-number'
-									onClick={() => setRating(3)}>
-									3
-								</div>
+								<div className='rating-number'>3</div>
 							</label>
 							<label htmlFor='rating-4'>
 								<input
@@ -135,11 +105,7 @@ export default function Home() {
 									checked={selectedRating === 4}
 									onChange={handleChange}
 								/>
-								<div
-									className='rating-number'
-									onClick={() => setRating(4)}>
-									4
-								</div>
+								<div className='rating-number'>4</div>
 							</label>
 							<label htmlFor='rating-5'>
 								<input
@@ -150,11 +116,7 @@ export default function Home() {
 									checked={selectedRating === 5}
 									onChange={handleChange}
 								/>
-								<div
-									className='rating-number'
-									onClick={() => setRating(5)}>
-									5
-								</div>
+								<div className='rating-number'>5</div>
 							</label>
 						</div>
 						<div>
