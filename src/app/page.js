@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
 	const [selectedRating, setSelectedRating] = useState(0)
@@ -27,14 +28,21 @@ export default function Home() {
 			errorMessage.text = ''
 			setErrorMessage(errorMessage)
 			setErrorBoolean(false)
-			cardOne.classList.add('hidden')
-			cardTwo.classList.add('show')
+			// cardOne.classList.add('hidden')
+			// cardTwo.classList.add('show')
 		}
+	}
+
+	const router = useRouter()
+
+	const handleNavigate = () => {
+		router.push(`/success?value=${selectedRating}`)
 	}
 
 	const submitValidation = (e) => {
 		e.preventDefault()
 		validateRating()
+		handleNavigate()
 	}
 
 	return (
@@ -125,7 +133,7 @@ export default function Home() {
 					</form>
 				</div>
 			</section>
-			<section className='card-container hidden' id='cardTwo'>
+			{/* <section className='card-container hidden' id='cardTwo'>
 				<div className='card-2'>
 					<img src='illustration-thank-you.svg' alt='' role='none' />
 					<p className='card--rating-selected'>
@@ -143,7 +151,7 @@ export default function Home() {
 						ever need more support, don’t hesitate to get in touch!`}
 					</p>
 				</div>
-			</section>
+			</section> */}
 		</main>
 	)
 }
