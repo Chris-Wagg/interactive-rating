@@ -36,7 +36,15 @@ export default function Home() {
 	const router = useRouter()
 
 	const handleNavigate = () => {
-		router.push(`/success?value=${selectedRating}`)
+		if (
+			selectedRating === 0 ||
+			selectedRating === null ||
+			selectedRating === undefined
+		) {
+			return
+		} else {
+			router.push(`/success?value=${selectedRating}`)
+		}
 	}
 
 	const submitValidation = (e) => {

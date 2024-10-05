@@ -1,8 +1,9 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
-export default function Success() {
+function CardTwo() {
 	const searchParams = useSearchParams()
 	const value = searchParams.get('value')
 
@@ -28,5 +29,13 @@ export default function Success() {
 				</div>
 			</section>
 		</main>
+	)
+}
+
+export default function Success() {
+	return (
+		<Suspense>
+			<CardTwo />
+		</Suspense>
 	)
 }
