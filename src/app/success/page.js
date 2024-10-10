@@ -3,6 +3,8 @@
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
 
+// TODO: fix the focus grab to make sure the page is read out on load
+
 function CardTwo() {
 	const searchParams = useSearchParams()
 	const value = searchParams.get('value')
