@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 
 export default function Home() {
 	const [selectedRating, setSelectedRating] = useState(0)
-	const [errorBoolean, setErrorBoolean] = useState(false)
 	const [errorMessage, setErrorMessage] = useState({})
 
 	// handles the radio button changes to update the state for the selected rating
@@ -50,6 +49,8 @@ export default function Home() {
 	const submitValidation = (e) => {
 		e.preventDefault()
 		validateRating()
+		document.getElementById('redirectMessage').textContent =
+			'You will now be redirected'
 		handleNavigate()
 	}
 
@@ -139,6 +140,10 @@ export default function Home() {
 							<button className='submit-btn'>SUBMIT</button>
 						</div>
 					</form>
+					<div
+						id='redirectMessage'
+						aria-live='polite'
+						className='hidden'></div>
 				</div>
 			</section>
 		</main>
