@@ -1,11 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function Home() {
 	const [selectedRating, setSelectedRating] = useState(0)
 	const [errorMessage, setErrorMessage] = useState({})
+	const [notification, setNotification] = useState('')
+
+	useEffect(() => {
+		if (notification !== '') {
+			console.log('Live region updated with:', notification)
+		}
+	}, [notification]) // Effect will run when the notification changes
 
 	// handles the radio button changes to update the state for the selected rating
 	const handleChange = (e) => {
@@ -20,15 +27,11 @@ export default function Home() {
 			selectedRating === null ||
 			selectedRating === undefined
 		) {
-			setErrorBoolean(true)
 			errorMessage.text = 'Please select a rating'
 			setErrorMessage(errorMessage)
 		} else if (selectedRating >= 1) {
 			errorMessage.text = ''
 			setErrorMessage(errorMessage)
-			setErrorBoolean(false)
-			// cardOne.classList.add('hidden')
-			// cardTwo.classList.add('show')
 		}
 	}
 
@@ -42,15 +45,18 @@ export default function Home() {
 		) {
 			return
 		} else {
-			router.push(`/success?value=${selectedRating}`)
+			setNotification('Submitting form, you will be redirected shortly.')
+
+			// Simulate a redirect after a delay (e.g., 3 seconds)
+			setTimeout(() => {
+				router.push(`/success?value=${selectedRating}`)
+			}, 500)
 		}
 	}
 
 	const submitValidation = (e) => {
 		e.preventDefault()
 		validateRating()
-		document.getElementById('redirectMessage').textContent =
-			'You will now be redirected'
 		handleNavigate()
 	}
 
@@ -139,11 +145,15 @@ export default function Home() {
 						<div>
 							<button className='submit-btn'>SUBMIT</button>
 						</div>
+						<div
+							aria-live='polite'
+							style={{
+								visibility: notification ? 'visible' : 'hidden',
+								height: '1px',
+							}}>
+							{notification}
+						</div>
 					</form>
-					<div
-						id='redirectMessage'
-						aria-live='polite'
-						className='hidden'></div>
 				</div>
 			</section>
 		</main>

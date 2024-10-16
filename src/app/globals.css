@@ -122,12 +122,14 @@ h2 {
 	border-radius: 25px;
 }
 
-.hidden {
-	visibility: hidden;
-}
-
-.show {
-	display: block;
+.hidden-heading {
+	clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 /* card 1 classes */
@@ -229,6 +231,11 @@ label {
 	color: white;
 }
 
+.card-2--thank-you {
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: white;
+}
 /* ----------------------- */
 
 #radios label {
