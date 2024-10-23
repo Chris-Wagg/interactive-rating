@@ -238,6 +238,8 @@ label {
 }
 /* ----------------------- */
 
+/* TODO: fix all this shit */
+
 #radios label {
 	position: relative;
 }
@@ -272,4 +274,8 @@ input:checked + .rating-number {
 
 .error-message {
 	color: red;
+}
+
+fieldset {
+	border: 0;
 }
