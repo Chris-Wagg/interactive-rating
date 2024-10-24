@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function Home() {
-	const [selectedRating, setSelectedRating] = useState()
+	const [selectedRating, setSelectedRating] = useState(0)
 	const [errorMessage, setErrorMessage] = useState({})
 	const [notification, setNotification] = useState('')
 
@@ -17,6 +17,23 @@ export default function Home() {
 	// handles the radio button changes to update the state for the selected rating
 	const handleChange = (e) => {
 		setSelectedRating(Number(e.target.value))
+		console.log(selectedRating)
+	}
+
+	// checks the rating number on submit and sets the corresponding error message and sets the error boolean
+	const validateRating = () => {
+		let errorMessage = {}
+		if (
+			selectedRating === 0 ||
+			selectedRating === null ||
+			selectedRating === undefined
+		) {
+			errorMessage.text = 'Please select a rating'
+			setErrorMessage(errorMessage)
+		} else if (selectedRating >= 1) {
+			errorMessage.text = ''
+			setErrorMessage(errorMessage)
+		}
 	}
 
 	const router = useRouter()
@@ -34,12 +51,13 @@ export default function Home() {
 			// Simulate a redirect after a delay (e.g., 3 seconds)
 			setTimeout(() => {
 				router.push(`/success?value=${selectedRating}`)
-			}, 3000)
+			}, 500)
 		}
 	}
 
 	const submitValidation = (e) => {
 		e.preventDefault()
+		validateRating()
 		handleNavigate()
 	}
 
@@ -60,67 +78,101 @@ export default function Home() {
 						offering!`}
 					</p>
 
-					<form className='rating-form' onSubmit={submitValidation}>
-						<fieldset>
-							<legend>Please select a rating</legend>
+					<fieldset>
+						<legend>Please select a rating</legend>
+						<form
+							className='rating-form'
+							onSubmit={submitValidation}>
+							{errorMessage.text && (
+								<div
+									className='error-message'
+									id='errorMessage'>
+									{errorMessage.text}
+								</div>
+							)}
+
 							<div className='rating-button-container'>
-								<label htmlFor='rating-1'>
+								<div>
+									<label
+										htmlFor='rating-1'
+										className='rating-number'>
+										1
+									</label>
 									<input
-										required
 										type='radio'
 										name='rating'
 										id='rating-1'
 										value='1'
-										// checked={selectedRating === 1}
+										checked={selectedRating === 1}
 										onChange={handleChange}
 									/>
-									<div className='rating-number'>1</div>
-								</label>
-								<label htmlFor='rating-2'>
+									{/* <div className='rating-number'>1</div> */}
+								</div>
+								<div>
+									<label
+										htmlFor='rating-2'
+										className='rating-number'>
+										2
+									</label>
 									<input
 										type='radio'
 										name='rating'
 										id='rating-2'
 										value='2'
-										// checked={selectedRating === 2}
+										checked={selectedRating === 2}
 										onChange={handleChange}
 										on
 									/>
-									<div className='rating-number'>2</div>
-								</label>
-								<label htmlFor='rating-3'>
+									{/* <div className='rating-number'>2</div> */}
+								</div>
+								<div>
+									<label
+										htmlFor='rating-3'
+										className='rating-number'>
+										3
+									</label>
 									<input
 										type='radio'
 										name='rating'
 										id='rating-3'
 										value='3'
-										// checked={selectedRating === 3}
+										checked={selectedRating === 3}
 										onChange={handleChange}
 									/>
-									<div className='rating-number'>3</div>
-								</label>
-								<label htmlFor='rating-4'>
+									{/* <div className='rating-number'>3</div> */}
+								</div>
+								<div>
+									<label
+										htmlFor='rating-4'
+										className='rating-number'>
+										4
+									</label>
 									<input
 										type='radio'
 										name='rating'
 										id='rating-4'
 										value='4'
-										// checked={selectedRating === 4}
+										checked={selectedRating === 4}
 										onChange={handleChange}
 									/>
-									<div className='rating-number'>4</div>
-								</label>
-								<label htmlFor='rating-5'>
+									{/* <div className='rating-number'>4</div> */}
+								</div>
+								<div>
+									<label
+										htmlFor='rating-5'
+										className='rating-number'>
+										5
+									</label>
 									<input
 										type='radio'
 										name='rating'
 										id='rating-5'
 										value='5'
-										// checked={selectedRating === 5}
+										checked={selectedRating === 5}
 										onChange={handleChange}
 									/>
-									<div className='rating-number'>5</div>
-								</label>
+									{/* <div className='rating-number'>5</div> */}
+								</div>
 							</div>
 							<div>
 								<button className='submit-btn'>SUBMIT</button>
@@ -135,8 +187,8 @@ export default function Home() {
 								}}>
 								{notification}
 							</div>
-						</fieldset>
-					</form>
+						</form>
+					</fieldset>
 				</div>
 			</section>
 		</main>

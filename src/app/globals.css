@@ -201,6 +201,11 @@ h2 {
 	background-color: white;
 }
 
+input:checked + .rating-number {
+	background-color: var(--clr-white);
+	color: black;
+}
+
 /* card 2 */
 
 .card-2 {
@@ -227,9 +232,9 @@ h2 {
 	font-weight: 700;
 }
 
-label {
+/* label {
 	color: white;
-}
+} */
 
 .card-2--thank-you {
 	font-size: 1.75rem;
@@ -244,17 +249,17 @@ label {
 	position: relative;
 }
 
-input[type='radio'] {
+/* input[type='radio'] {
 	position: absolute;
-	opacity: 0;
-}
+	visibility: hidden;
+} */
 
 input:focus-visible + .rating-number {
 	background-color: var(--clr-white);
 	color: black;
 }
 
-.rating-number {
+/* .rating-number {
 	color: var(--clr-light-grey);
 	background-color: var(--clr-dark-blue);
 	border: 0;
@@ -265,9 +270,9 @@ input:focus-visible + .rating-number {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
+} */
 
-input:checked + .rating-number {
+input[type='radio']:checked + .rating-number {
 	background-color: var(--clr-white);
 	color: black;
 }
@@ -276,6 +281,11 @@ input:checked + .rating-number {
 	color: red;
 }
 
-fieldset {
+/* fieldset {
 	border: 0;
 }
+
+legend {
+	visibility: hidden;
+	height: 1px;
+} */
