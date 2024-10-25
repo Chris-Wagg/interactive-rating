@@ -149,16 +149,6 @@ export default function Home() {
 							<div>
 								<button className='submit-btn'>SUBMIT</button>
 							</div>
-							<div
-								aria-live='polite'
-								style={{
-									visibility: notification
-										? 'visible'
-										: 'hidden',
-									height: '1px',
-								}}>
-								{notification}
-							</div>
 						</form>
 					</fieldset>
 				</div>
