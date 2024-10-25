@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 
 export default function Home() {
 	const [selectedRating, setSelectedRating] = useState(0)
-	const [errorMessage, setErrorMessage] = useState({})
 	const [notification, setNotification] = useState('')
 
 	useEffect(() => {
@@ -17,24 +16,7 @@ export default function Home() {
 	// handles the radio button changes to update the state for the selected rating
 	const handleChange = (e) => {
 		setSelectedRating(Number(e.target.value))
-		console.log(selectedRating)
 	}
-
-	// checks the rating number on submit and sets the corresponding error message and sets the error boolean
-	// const validateRating = () => {
-	// 	let errorMessage = {}
-	// 	if (
-	// 		selectedRating === 0 ||
-	// 		selectedRating === null ||
-	// 		selectedRating === undefined
-	// 	) {
-	// 		errorMessage.text = 'Please select a rating'
-	// 		setErrorMessage(errorMessage)
-	// 	} else if (selectedRating >= 1) {
-	// 		errorMessage.text = ''
-	// 		setErrorMessage(errorMessage)
-	// 	}
-	// }
 
 	const router = useRouter()
 
@@ -57,7 +39,6 @@ export default function Home() {
 
 	const submitValidation = (e) => {
 		e.preventDefault()
-		// validateRating()
 		handleNavigate()
 	}
 
@@ -99,7 +80,6 @@ export default function Home() {
 										name='rating'
 										id='rating-1'
 										value='1'
-										checked={selectedRating === 1}
 										onChange={handleChange}
 									/>
 									<label
@@ -107,7 +87,6 @@ export default function Home() {
 										className='rating-number'>
 										1
 									</label>
-									{/* <div className='rating-number'>1</div> */}
 								</div>
 								<div>
 									<input
@@ -115,7 +94,6 @@ export default function Home() {
 										name='rating'
 										id='rating-2'
 										value='2'
-										checked={selectedRating === 2}
 										onChange={handleChange}
 										on
 									/>
@@ -124,7 +102,6 @@ export default function Home() {
 										className='rating-number'>
 										2
 									</label>
-									{/* <div className='rating-number'>2</div> */}
 								</div>
 								<div>
 									<input
@@ -132,7 +109,6 @@ export default function Home() {
 										name='rating'
 										id='rating-3'
 										value='3'
-										checked={selectedRating === 3}
 										onChange={handleChange}
 									/>
 									<label
@@ -140,7 +116,6 @@ export default function Home() {
 										className='rating-number'>
 										3
 									</label>
-									{/* <div className='rating-number'>3</div> */}
 								</div>
 								<div>
 									<input
@@ -148,7 +123,6 @@ export default function Home() {
 										name='rating'
 										id='rating-4'
 										value='4'
-										checked={selectedRating === 4}
 										onChange={handleChange}
 									/>
 									<label
@@ -156,7 +130,6 @@ export default function Home() {
 										className='rating-number'>
 										4
 									</label>
-									{/* <div className='rating-number'>4</div> */}
 								</div>
 								<div>
 									<input
@@ -164,7 +137,6 @@ export default function Home() {
 										name='rating'
 										id='rating-5'
 										value='5'
-										checked={selectedRating === 5}
 										onChange={handleChange}
 									/>
 									<label
@@ -172,7 +144,6 @@ export default function Home() {
 										className='rating-number'>
 										5
 									</label>
-									{/* <div className='rating-number'>5</div> */}
 								</div>
 							</div>
 							<div>
