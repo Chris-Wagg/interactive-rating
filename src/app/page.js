@@ -64,14 +64,6 @@ export default function Home() {
 						<form
 							className='rating-form'
 							onSubmit={submitValidation}>
-							{errorMessage.text && (
-								<div
-									className='error-message'
-									id='errorMessage'>
-									{errorMessage.text}
-								</div>
-							)}
-
 							<div className='rating-button-container'>
 								<div>
 									<input
