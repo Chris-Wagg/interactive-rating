@@ -21,20 +21,20 @@ export default function Home() {
 	}
 
 	// checks the rating number on submit and sets the corresponding error message and sets the error boolean
-	const validateRating = () => {
-		let errorMessage = {}
-		if (
-			selectedRating === 0 ||
-			selectedRating === null ||
-			selectedRating === undefined
-		) {
-			errorMessage.text = 'Please select a rating'
-			setErrorMessage(errorMessage)
-		} else if (selectedRating >= 1) {
-			errorMessage.text = ''
-			setErrorMessage(errorMessage)
-		}
-	}
+	// const validateRating = () => {
+	// 	let errorMessage = {}
+	// 	if (
+	// 		selectedRating === 0 ||
+	// 		selectedRating === null ||
+	// 		selectedRating === undefined
+	// 	) {
+	// 		errorMessage.text = 'Please select a rating'
+	// 		setErrorMessage(errorMessage)
+	// 	} else if (selectedRating >= 1) {
+	// 		errorMessage.text = ''
+	// 		setErrorMessage(errorMessage)
+	// 	}
+	// }
 
 	const router = useRouter()
 
@@ -57,7 +57,7 @@ export default function Home() {
 
 	const submitValidation = (e) => {
 		e.preventDefault()
-		validateRating()
+		// validateRating()
 		handleNavigate()
 	}
 
@@ -93,12 +93,8 @@ export default function Home() {
 
 							<div className='rating-button-container'>
 								<div>
-									<label
-										htmlFor='rating-1'
-										className='rating-number'>
-										1
-									</label>
 									<input
+										required
 										type='radio'
 										name='rating'
 										id='rating-1'
@@ -106,14 +102,14 @@ export default function Home() {
 										checked={selectedRating === 1}
 										onChange={handleChange}
 									/>
+									<label
+										htmlFor='rating-1'
+										className='rating-number'>
+										1
+									</label>
 									{/* <div className='rating-number'>1</div> */}
 								</div>
 								<div>
-									<label
-										htmlFor='rating-2'
-										className='rating-number'>
-										2
-									</label>
 									<input
 										type='radio'
 										name='rating'
@@ -123,14 +119,14 @@ export default function Home() {
 										onChange={handleChange}
 										on
 									/>
+									<label
+										htmlFor='rating-2'
+										className='rating-number'>
+										2
+									</label>
 									{/* <div className='rating-number'>2</div> */}
 								</div>
 								<div>
-									<label
-										htmlFor='rating-3'
-										className='rating-number'>
-										3
-									</label>
 									<input
 										type='radio'
 										name='rating'
@@ -139,14 +135,14 @@ export default function Home() {
 										checked={selectedRating === 3}
 										onChange={handleChange}
 									/>
+									<label
+										htmlFor='rating-3'
+										className='rating-number'>
+										3
+									</label>
 									{/* <div className='rating-number'>3</div> */}
 								</div>
 								<div>
-									<label
-										htmlFor='rating-4'
-										className='rating-number'>
-										4
-									</label>
 									<input
 										type='radio'
 										name='rating'
@@ -155,14 +151,14 @@ export default function Home() {
 										checked={selectedRating === 4}
 										onChange={handleChange}
 									/>
+									<label
+										htmlFor='rating-4'
+										className='rating-number'>
+										4
+									</label>
 									{/* <div className='rating-number'>4</div> */}
 								</div>
 								<div>
-									<label
-										htmlFor='rating-5'
-										className='rating-number'>
-										5
-									</label>
 									<input
 										type='radio'
 										name='rating'
@@ -171,6 +167,11 @@ export default function Home() {
 										checked={selectedRating === 5}
 										onChange={handleChange}
 									/>
+									<label
+										htmlFor='rating-5'
+										className='rating-number'>
+										5
+									</label>
 									{/* <div className='rating-number'>5</div> */}
 								</div>
 							</div>

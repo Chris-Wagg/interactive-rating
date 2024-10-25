@@ -243,34 +243,25 @@ input:checked + .rating-number {
 }
 /* ----------------------- */
 
-/* TODO: fix all this shit */
-
 #radios label {
 	position: relative;
 }
 
-/* input[type='radio'] {
+input[type='radio'] {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
 	position: absolute;
-	visibility: hidden;
-} */
+}
 
 input:focus-visible + .rating-number {
 	background-color: var(--clr-white);
 	color: black;
 }
-
-/* .rating-number {
-	color: var(--clr-light-grey);
-	background-color: var(--clr-dark-blue);
-	border: 0;
-	border-radius: 999px;
-	height: 50px;
-	width: 50px;
-	font-weight: 700;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-} */
 
 input[type='radio']:checked + .rating-number {
 	background-color: var(--clr-white);
@@ -281,11 +272,17 @@ input[type='radio']:checked + .rating-number {
 	color: red;
 }
 
-/* fieldset {
+fieldset {
 	border: 0;
 }
 
 legend {
-	visibility: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
 	height: 1px;
-} */
+	width: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+}
